@@ -115,9 +115,9 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                 <div class="loginmodal-container">
                         <h1>Login to Your Account</h1><br>
                   <form method="post" id="formLogin">
-                      <input type="text" id="user" name="email_grupo" minlength="3" placeholder="email do grupo" value ="sisotani@gmail.com" required>
+                      <input type="text" id="user" name="email_grupo" minlength="3" placeholder="email do grupo"  required>
                       <br>
-                      <input type="password" id="pass" name="senha" minlength="6" placeholder="senha"  value="123lab" required>                                      
+                      <input type="password" id="pass" name="senha" minlength="6" placeholder="senha"   required>                                      
                       <br>
                       <input type="submit" name="submitLogin" class="login loginmodal-submit" value="Login" id="btnLogin">
                   </form>
@@ -418,9 +418,15 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
     }
     
    
-    function resultadoLogin(result){        
-        $('#login-modal').modal('hide');       
-        window.location.assign(result);                   
+    function resultadoLogin(result){  
+        if( result.search(/ses/i) <0){
+            alert(result);
+        }            
+        else {
+            $('#login-modal').modal('hide');
+            newlocation = window.location.href+result;
+            window.location.assign(newlocation);                   
+        }
     }
    
     function textoInicial(div) {
@@ -436,7 +442,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
     
     function Logoff(){
         
-         window.location.assign("./GrpPesquisa.php"); 
+         window.location.assign("./index.php"); 
     }
     
    
