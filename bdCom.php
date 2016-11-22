@@ -9,6 +9,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
         $file = file_get_contents("bd.cfg"); 
         $contents = utf8_encode($file); 
         $bdinfo = json_decode($contents, true); 
+     
         $db = $defaultdb = $bdinfo["default_db"];
         $qExperimental = $bdinfo["questionarioExperimental"];
         $qResumido = $bdinfo["qpjbr"];
