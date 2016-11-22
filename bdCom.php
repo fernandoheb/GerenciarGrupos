@@ -179,7 +179,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                 $res = $puxaBD->selectCustomQuery($string);
                 //echo $string;
                 if($res->num_rows > 0)  {
-                    $resultado = $res->fetch_all();       
+                    $resultado = $res->fetch_all(MYSQLI_ASSOC);       
                     $jason = json_encode($resultado);                       
                     echo $jason; 
                 }else {
