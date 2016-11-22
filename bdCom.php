@@ -4,19 +4,24 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
         include 'valSes.php';
 	$puxaBD = new Crud();
 	$puxaBD->conn();
+        $puxaBD->setCharSet();
         //setVar bancos
         $file = file_get_contents("bd.cfg"); 
         $contents = utf8_encode($file); 
         $bdinfo = json_decode($contents, true); 
-        
         $db = $defaultdb = $bdinfo["default_db"];
         $qExperimental = $bdinfo["questionarioExperimental"];
         $qResumido = $bdinfo["qpjbr"];
         
          $action = (string)filter_input(INPUT_GET, 'action');
-      //   $grupoid = filter_input(INPUT_GET, 'grupoid'); //codigo do grupo de pesquisa
+         $grupoid = filter_input(INPUT_GET, 'grupoid'); //codigo do grupo de pesquisa
          $codgrp = (string)filter_input(INPUT_GET, 'codgrp'); //codigo do grupoExperimental
     //    $sigla = (string)filter_input(INPUT_GET, 'sigla');
+         
+        
+             
+         
+         
          if(isset($_GET["db"])) {
              $banco= (string)filter_input(INPUT_GET, 'db');
              if ($banco === "qpjbr"){
@@ -54,9 +59,24 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
         
         
         
-        
-        
-        
+        if($action=="testeBD") {
+             echo "Iniciando teste <br>";
+             echo "<br>";
+             echo "db = ".$db;
+             echo "<br>";
+             echo "qExperimental = ".$qExperimental;
+             echo "<br>";
+             echo "Codgrp =  $codgrp";
+             echo "<br>";
+             echo "logado = $logado";
+             echo "<br>";
+             echo "qResumido $qResumido";
+             echo "<br>";               
+             echo "grupoid = ".$grupoid; 
+                echo "<br>";
+             echo "sigla = ".$sigla;
+           
+         }               
         
         
         if (($action === "Login")||($submitLogin)){
@@ -96,7 +116,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                         $_SESSION["nomeGrp"] = $resultado["Nome_Grupo"];
                         $_SESSION["Sigla"] = $resultado["Sigla"];
                         $_SESSION["numLogin"] = $num;
-                        echo "./GrpPesquisa.php?ses=".$num; 
+                        echo "./?ses=".$num; 
                 } else {
                     echo "usuário ou senha incorretos";
                 }
@@ -130,11 +150,14 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                 . "FROM `grupo_experimental` WHERE Grupo_Pesquisa_ID =$grupoid";
                 $res = $puxaBD->selectCustomQuery($string);
                 
+                
                 $row_cnt = $res->num_rows;
                 
                 if($row_cnt > 0)     {
                     $resultado = $res->fetch_all(MYSQLI_ASSOC);                
                     $jason = json_encode($resultado);
+                   
+
                     echo $jason; 
                 } else { 
                     echo $jason = null;
@@ -175,14 +198,11 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
             $senha = utf8_decode((string)filter_input(INPUT_POST, 'senha'));
             $contato = utf8_decode((string)filter_input(INPUT_POST, 'contato'));
             $descricao = utf8_decode((string)filter_input(INPUT_POST, 'descricao'));
-            
-            
-           
              
             $string = "INSERT INTO "
             ."`grupo_pesquisa`(`Nome_Grupo`, `Sigla`, `Email_grupo`, `Responsavel`, `Senha`, `Email_resp`, `Contato`, `Descricao`, `Afiliacao`) "
             ." VALUES "
-            ."( '$nomeGrupo','$sigla','$emailGrupo','$responsavel','$emailResponsavel','$senha','$contato','$descricao','$afiliacao')";
+            ."( '$nomeGrupo','$sigla','$emailGrupo','$responsavel','$senha','$emailResponsavel','$contato','$descricao','$afiliacao')";
             $query1 = $puxaBD->selectCustomQuery($string);
             
             //echo $string;
@@ -230,5 +250,20 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
         
         
         $puxaBD->close();
-
+        
+        function inserir_novo_experimental (){
+            
+        }
+        function inserir_novo_grupo (){
+            
+        }
+        function login(){
+            
+        }
+        function exportar(){
+            
+        }
+        function retornar(){
+            
+        }
 ?>

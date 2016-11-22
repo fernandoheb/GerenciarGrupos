@@ -118,7 +118,7 @@ function createFormNovoGrupo(div){
     content.appendChild(newElement);
     
     content= document.getElementById("posSigla");
-    newElement = document.createElement("input"); newElement.type="text"; newElement.className="form-control";  newElement.name="sigla"; newElement.id="inputSigla"; newElement.placeholder="Sigla"; newElement.required="true"; newElement.placeholder="Sigla ex: ICMCUSP"; newElement.required="true"; newElement.minlenght="3";   
+    newElement = document.createElement("input"); newElement.type="text"; newElement.className="form-control";  newElement.name="sigla"; newElement.id="inputSigla"; newElement.placeholder="Sigla"; newElement.required="true"; newElement.placeholder="Sigla ex: ICMCUSP"; newElement.required="true"; newElement.setAttribute("minlength","3");   
     content.appendChild(newElement);   
     
     content= document.getElementById("posAfiliacao");
@@ -134,11 +134,11 @@ function createFormNovoGrupo(div){
     content.appendChild(newElement);
     
     content= document.getElementById("posSenha");
-    newElement = document.createElement("input"); newElement.type="password"; newElement.className="form-control"; newElement.name="senha"; newElement.id="inputSenha"; newElement.placeholder="Senha"; newElement.required="true"; newElement.minlenght="6";
+    newElement = document.createElement("input"); newElement.type="password"; newElement.className="form-control"; newElement.name="senha"; newElement.id="inputSenha"; newElement.placeholder="Senha"; newElement.required="true"; newElement.setAttribute("minlength","6");
     content.appendChild(newElement);
     
     content= document.getElementById("posConfSenha");
-    newElement = document.createElement("input"); newElement.type="password"; newElement.className="form-control"; newElement.name="confirmaSenha"; newElement.id="confirmaSenha"; newElement.placeholder="Confirme a Senha"; newElement.required="true"; newElement.setAttribute("data-rule-equalTo","#inputSenha"); newElement.minlenght="6";
+    newElement = document.createElement("input"); newElement.type="password"; newElement.className="form-control"; newElement.name="confirmaSenha"; newElement.id="confirmaSenha"; newElement.placeholder="Confirme a Senha"; newElement.required="true"; newElement.setAttribute("data-rule-equalTo","#inputSenha"); newElement.setAttribute("minlength","6"); 
     content.appendChild(newElement);
     
     content= document.getElementById("posEmailResponsavel");
@@ -366,6 +366,7 @@ function createFormExibirGrupos(div,usuario){
              var acao= "./bdCom.php?action=GruposExperimentais";
                 //function ajax(Acao,Data,DataType,Metodo,FunctionSucess)//
                 ajax(acao,null,'json','POST',resultadoSelect = function (res){
+                    
                     var length = res.length;
                     console.log(length);
                     console.log(res);                    

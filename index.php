@@ -424,8 +424,8 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
         }            
         else {
             $('#login-modal').modal('hide');
-            newlocation = window.location.href+result;
-            window.location.assign(newlocation);                   
+            
+            window.location.assign(result);                   
         }
     }
    
