@@ -17,7 +17,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
          $action = (string)filter_input(INPUT_GET, 'action');
          $grupoid = filter_input(INPUT_GET, 'grupoid'); //codigo do grupo de pesquisa
          $codgrp = (string)filter_input(INPUT_GET, 'codgrp'); //codigo do grupoExperimental
-    //    $sigla = (string)filter_input(INPUT_GET, 'sigla');
+         $sigla = (string)filter_input(INPUT_GET, 'sigla');
          
         
              
@@ -259,7 +259,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                 $res = $puxaBD->selectCustomQuery($string);
                 $row = $res->fetch_assoc();
                 $newid= $row["ID"]+1;
-            $novocodgrp = $row["sigla"].$newid;
+            $novocodgrp = $sigla.$newid;
             
             
             //$idGrupoPesquisa =(string)filter_input(INPUT_POST, 'id_grupo_pesquisa');            
