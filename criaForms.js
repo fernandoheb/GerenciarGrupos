@@ -118,7 +118,8 @@ function createFormNovoGrupo(div){
     content.appendChild(newElement);
     
     content= document.getElementById("posSigla");
-    newElement = document.createElement("input"); newElement.type="text"; newElement.className="form-control";  newElement.name="sigla"; newElement.id="inputSigla"; newElement.placeholder="Sigla"; newElement.required="true"; newElement.placeholder="Sigla ex: ICMCUSP"; newElement.required="true"; newElement.setAttribute("minlength","3");   
+    newElement = document.createElement("input"); newElement.type="text";  newElement.className="form-control";  newElement.name="sigla"; newElement.id="inputSigla"; newElement.placeholder="Sigla"; newElement.required="true"; newElement.placeholder="Sigla ex: ICMCUSP"; newElement.required="true"; newElement.setAttribute("minlength","3"); 
+    newElement.style.cssText="text-transform:uppercase";    
     content.appendChild(newElement);   
     
     content= document.getElementById("posAfiliacao");
@@ -263,8 +264,8 @@ function createFormExibirGrupos(div,usuario){
              //Cabeçaçho
              
          //   grupos = recuperagrupos(grupoid);
-            var questionario = "ec2-52-67-168-150.sa-east-1.compute.amazonaws.com/questionario/index.php?codgrp=";
-            var qpjbr= "'ec2-52-67-168-150.sa-east-1.compute.amazonaws.com/qpjbr/index.php?codgrp=";
+            var questionario = "http://questionario.caed-lab.com/index.php?codgrp=[C&oacute;digo]";
+            var qpjbr= "http://qpjbr.caed-lab.com/index.php?codgrp=[C&oacute;digo]";
             var frm ='<div class="row .col-md-offset-*" id="divForm"> '+
                             '<div class="col-sm-12 row " id="bodyForm">'+
                               //Cabeçaçho

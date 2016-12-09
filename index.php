@@ -1,5 +1,6 @@
- <?php header('Content-Type: text/html; charset=utf-8');
-setlocale(LC_ALL, 'pt_BR.UTF8');  
+ <?php 
+//header('Content-Type: text/html; charset=utf-8');
+ setlocale(LC_ALL, 'pt_BR.UTF8');  
     include 'valSes.php';
       
 ?>
@@ -115,7 +116,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                 <div class="loginmodal-container">
                         <h1>Login to Your Account</h1><br>
                   <form method="post" id="formLogin">
-                      <input type="text" id="user" name="email_grupo" minlength="3" placeholder="email do grupo"  required>
+                      <input type="text" style="text-transform:uppercase" id="user" name="usuario" minlength="3" placeholder="Sigla do grupo"  required>
                       <br>
                       <input type="password" id="pass" name="senha" minlength="6" placeholder="senha"   required>                                      
                       <br>
@@ -124,7 +125,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
 
                   <div class="login-help">
                       <a href="#"id="novoRegistro" data-dismiss="modal">Register</a> - 
-                      <a href="./Remindme.php">Forgot Password</a>
+                      <a href="./remindme.php">Forgot Password</a>
                   </div>
                 </div>
         </div>
@@ -321,7 +322,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
     function inserirMainForm(){         
          var acao= "./bdCom.php?action="+operacao;
          if (operacao == "inserir_novo_grupo"){ 
-            var verificaSigla = "./bdCom.php?action=verificaSigla&berifica="+$("#sigla").val;
+            var verificaSigla = "./bdCom.php?action=verificaSigla&verifica="+$("#inputSigla").val();
             ajax(verificaSigla ,null,'text','POST',function(res){
                 if (res=="existe"){
                     alert("Sigla já existente, por favor escolha outra sigla para seu grupo");

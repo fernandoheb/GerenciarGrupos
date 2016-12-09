@@ -82,14 +82,14 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
         
         if (($action === "Login")||($submitLogin)){
             $puxaBD->selectDB($defaultdb);
-            $email = utf8_decode((string)filter_input(INPUT_POST, 'email_grupo'));
+            $usuario = utf8_decode((string)filter_input(INPUT_POST, 'usuario'));
             $senha =(string)filter_input(INPUT_POST, 'senha');
              
            
     //        $emailResponsavel = utf8_decode((string)filter_input(INPUT_GET, 'emailResponsavel'));
     //        $senha =(string)filter_input(INPUT_GET, 'senha');
              
-            $string = "Select GP.* from grupo_pesquisa GP WHERE GP.Email_grupo = '$email' "
+            $string = "Select GP.* from grupo_pesquisa GP WHERE GP.Sigla = '$usuario' "
                     . "AND  GP.Senha = '".$senha."' order by GP.ID Desc";
             $res = $puxaBD->selectCustomQuery($string);
           //
@@ -117,11 +117,32 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                         $_SESSION["nomeGrp"] = $resultado["Nome_Grupo"];
                         $_SESSION["Sigla"] = $resultado["Sigla"];
                         $_SESSION["numLogin"] = $num;
-                        echo "./?ses=".$num; 
+                        echo "./index.php?ses=".$num; 
                 } else {
                     echo "usuário ou senha incorretos";
                 }
         } 
+        
+        if (($action === "confereEmail")||($submitEmail)){
+            $puxaBD->selectDB($defaultdb);
+            $email = utf8_decode((string)filter_input(INPUT_POST, 'email'));
+            $sigla = utf8_decode((string)filter_input(INPUT_POST, 'sigla'));
+            $string = "Select GP.* from grupo_pesquisa GP WHERE GP.Sigla = '$sigla' "
+                    . "AND  GP.Email_grupo = '".$email."' order by GP.ID Desc";
+            $res = $puxaBD->selectCustomQuery($string);    
+            $row_cnt = $res->num_rows;
+                
+                if($row_cnt > 0)     {
+                    $row = $res->fetch_assoc();
+                    if (enviarLembrete($row)){
+                        echo "existe";
+                    }
+                } else {
+                    echo 'email não encontrado';
+                }      
+        }
+       
+        
         
    
         if ($action==="verificaSigla") {
@@ -151,13 +172,18 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                 . "FROM `grupo_experimental` WHERE Grupo_Pesquisa_ID =$grupoid";
                 $res = $puxaBD->selectCustomQuery($string);
                 
-                
+                //echo "<br> String: ".$string . "<br><br> row count: ";
                 $row_cnt = $res->num_rows;
+           
                 
                 if($row_cnt > 0)     {
-                    $resultado = $res->fetch_all(MYSQLI_ASSOC);                
-                    $jason = json_encode($resultado);
+                  if (method_exists($res,'fetch_all')){ 
+                      $resultado = $res->fetch_all(MYSQLI_ASSOC);                
+                   } else {    
                    
+                       $resultado = fetchAll($res);
+                   }
+                    $jason = json_encode($resultado);
 
                     echo $jason; 
                 } else { 
@@ -179,8 +205,12 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                 $res = $puxaBD->selectCustomQuery($string);
                 //echo $string;
                 if($res->num_rows > 0)  {
-                    $resultado = $res->fetch_all();       
-                    $jason = json_encode($resultado);                       
+                    if (method_exists($res,'fetch_all')){ 
+                        $resultado = $res->fetch_all(MYSQLI_ASSOC);                
+                    } else {    
+                        $resultado = fetchAll($res);
+                    }         
+                    $jason = json_encode($resultado);
                     echo $jason; 
                 }else {
                     echo $jason = null;
@@ -267,4 +297,11 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
         function retornar(){
             
         }
+        function enviarLembrete($usuario){
+            $message = "Estamos enviando o lembrete de senha de acesso ao gerenciador de grupos para o grupo:\r\n ". 
+                    $usuario['Sigla'] ." \r\n  senha de acesso = ".$usuario['senha'];
+            return mail ( $usuario["Email_grupo"] , "Lembrete de Email!" , $message,null, 'no-reply@caed-lab.com');
+        }
+        
+       
 ?>
