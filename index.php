@@ -76,8 +76,9 @@
       <ul class="nav navbar-nav">
           <!-- itens do menu -->
           <li class="active home"><a href="#" >Home</a></li>
+          <li><a href="#" id="novoRegistro2" onclick="register();">Registrar Grupo</a></li>
         <!--
-        <li><a href="#">About</a></li>
+        
         <li><a href="#">Projects</a></li>
         <li><a href="#">Contact</a></li>-->
       </ul>
@@ -124,8 +125,8 @@
                   </form>
 
                   <div class="login-help">
-                      <a href="#"id="novoRegistro" data-dismiss="modal">Register</a> - 
-                      <a href="./remindme.php">Forgot Password</a>
+                      <a href="#"id="novoRegistro" data-dismiss="modal" onclick="register();">Registrar</a> - 
+                      <a href="./remindme.php">Esqueci minha senha</a>
                   </div>
                 </div>
         </div>
@@ -195,21 +196,7 @@
         
         
     });
-   
-      
-        $("#novoRegistro").click(function(){ 
-                
-               div.empty();        
-               
-                       
-               operacao = createFormNovoGrupo(div); 
-               
-              $("#inputNomeGrupo").focus();
-              console.log(operacao);
-               
-        });
-
-     
+    
         $("#novoExperimental").click(function(){           
             
            div.empty();            
@@ -221,7 +208,8 @@
                 console.log("novo grupo "+operacao);
            }
            
-        });
+        });                
+        
         $("#exibirGrupos").click(function(){           
             div.empty();      
             if (logged) {                     
@@ -283,7 +271,13 @@
             } 
         });
       
- 
+    function register(){
+        div.empty();        
+        operacao = createFormNovoGrupo(div); 
+               
+        $("#inputNomeGrupo").focus();
+        console.log(operacao);
+    }
    
     function iniciaHome(){
         div.empty();
@@ -327,11 +321,19 @@
                 if (res=="existe"){
                     alert("Sigla já existente, por favor escolha outra sigla para seu grupo");
                 } else {
-                    ajax(acao,$('#MainForm').serialize(),'text','POST',alert);       
+                    ajax(acao,$('#MainForm').serialize(),'text','POST',function (e) {
+                        alert(e);
+                        iniciaHome();                    
+                    });       
                 }                
             });            
          } else {
-            ajax(acao,$('#MainForm').serialize(),'text','POST',alert);    
+            ajax(acao,$('#MainForm').serialize(),'text','POST',function (e) {
+                        alert(e);
+                        if(operacao === "inserir_novo_experimental"){
+                            $("#exibirGrupos").click();  
+                        }
+                    });    
          }
          //alert($('#MainForm').serialize());
          //ajax(acao,$('#MainForm').serialize(),'text','POST',alert);

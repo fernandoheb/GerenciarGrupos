@@ -291,8 +291,8 @@ function createFormExibirGrupos(div,usuario){
 
                                         var  body = "" +
                                              ' <tr>  '+
-                                             '  <th> ID </th>' +
-                                             '  <th> GrupoID </th>' +
+                                       //      '  <th> ID </th>' +
+                                       //      '  <th> GrupoID </th>' +
                                              '  <th> C&oacute;digo </th>'+ 
                                              '  <th> Descri&ccedil;&atilde;o </th>'+ 
                                              '  <th> Popula&ccedil;&atilde;o </th>'+ 
@@ -401,15 +401,15 @@ function createFormExibirGrupos(div,usuario){
                         var codgrp = res[i]['codgrupo'];
   /*   //   newTR.id = "tr_"+res[i]['codgrupo'];
                         //id
-                      //  newTDid.id = "td_"+res[i]['id'];
-                       // newTDid.name = "id_"+res[i]['id'];*/
-                        newTDid.appendChild(document.createTextNode(res[i]['id']));
-                        newTR.appendChild(newTDid);
+                        newTDid.id = "td_"+res[i]['id'];
+                        newTDid.name = "id_"+res[i]['id'];*/
+    //-->                    newTDid.appendChild(document.createTextNode(res[i]['id']));
+    //-->                    newTR.appendChild(newTDid);
   /*                     //grupoid
-                     //   newTDgrupoid.id = "td_"+res[i]['grupoId'];
-                      //  newTDgrupoid.name = "grupoId_"+res[i]['grupoId'];*/
-                        newTDgrupoid.appendChild(document.createTextNode(res[i]['grupoId']));
-                        newTR.appendChild(newTDgrupoid);
+                        newTDgrupoid.id = "td_"+res[i]['grupoId'];
+                        newTDgrupoid.name = "grupoId_"+res[i]['grupoId'];*/
+    //-->                    newTDgrupoid.appendChild(document.createTextNode(res[i]['grupoId']));
+   // -->                    newTR.appendChild(newTDgrupoid);
   /*                 //codgrupo
                       //  newTDcodgrupo.id = "td_"+res[i]['codgrupo'];
                        // newTDcodgrupo.name = "codgrupo_"+res[i]['codgrupo'];*/
