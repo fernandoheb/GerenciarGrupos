@@ -205,12 +205,14 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                 $res = $puxaBD->selectCustomQuery($string);
                 //echo $string;
                 if($res->num_rows > 0)  {
+
                     if (method_exists($res,'fetch_all')){ 
                         $resultado = $res->fetch_all(MYSQLI_ASSOC);                
                     } else {    
                         $resultado = fetchAll($res);
                     }         
                     $jason = json_encode($resultado);
+
                     echo $jason; 
                 }else {
                     echo $jason = null;

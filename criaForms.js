@@ -282,7 +282,7 @@ function createFormExibirGrupos(div,usuario){
                                     '<p> url atual do questionario resumido: <input type"text" class="form-control" value="'+qpjbr+'"> </p>'+
                                         '</div>'+                                                                                
                                         '<div class="col-sm-12" id="divOption">'+
-                                            '<h3> selecione de qual question&aacute;rio que voc&ecirc; quer exportar os usu&aacute;rios <h3>'+
+                                            '<h3> Selecione abaixo de qual question&aacute;rio que voc&ecirc; deseja baixar os dados <h3>'+
                                             '<center id="posOption"></center>'+
                                         '</div>'+
                                         ///Table
