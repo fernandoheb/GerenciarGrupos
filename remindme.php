@@ -58,7 +58,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
   </style>
 </head>
 <body>
-<!--Barra de navegaÁ„o-->
+<!--Barra de navegaÔøΩÔøΩo-->
 <nav class="navbar navbar-inverse ">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -117,7 +117,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
     </div>
     </div>
 </div>
-<!-- Roda pÈ-->
+<!-- Roda pÔøΩ-->
 <footer class="container-fluid text-center">
     <p>Laborat&oacute;rio de Computa&ccedil;&aacute;o Aplicada a Educa&ccedil;&aacute;o </p>
     <p>Universidade de S&atilde;o Paulo </p>
@@ -150,7 +150,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                 inserirMainForm();
                
             } else{
-               alert("N„o foi possÌvel realizar a operaÁao ");           
+               alert("N√£o foi poss√≠vel realizar a opera√ß√£o ");           
             } 
         });
    
@@ -159,11 +159,11 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
          var acao= "./bdCom.php?action=confereEmail";                 
          ajax(acao,$('#MainForm').serialize(),'text','POST',function (e){
              if (e==="existe"){
-                    alert("Sua senha foi enviada para o email do grupo e um aviso enviado para o respons·vel cadastrado");          
+                    alert("Sua senha foi enviada para o email do grupo e um aviso enviado para o respons√°vel cadastrado");          
                     alert("esta funcionalidade ainda esta em desenvolvimento");
                     window.location("./index.php");
              } else {
-                 alert("Email n„o foi encontrado");
+                 alert("Email n√£o foi encontrado");
              }             
          });                
     }
@@ -184,7 +184,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                         FunctionSucess(retorno);
                     },
                      error:function( xhr,status, error) {                       
-                        $string="Erro ao executar operaÁ„o \n\ ou Nenhum resultado foi retornado\n\ "+
+                        $string="Erro ao executar opera√ß√£o \n\ ou Nenhum resultado foi retornado\n\ "+
                                 "\n\\n\ "+xhr.responseText;
                         alert($string);
         
