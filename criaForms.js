@@ -16,71 +16,90 @@ function createFormNovoGrupo(div) {
             //Cabeçalho                        
             '<div class="row" id="cabecalho">' +
             //Cabeçalho
-            '<h2 class="text-center"> Cadastrar novo Grupo de Pesquisa </h2>                       ' +
+            '<h2 > Cadastrar novo Grupo de Pesquisa </h2>                       ' +
             '</div>' +
             '<div class="row" id="fields">' +
             //Nome do grupo
             '<div class="form-group row" id="divNomeGrupo">' +
-            '<label for="inputNomeGrp" class="col-sm-1 control-label">Nome do Grupo<span style="color:red">*</span> </label>' +
-            '<div class="col-sm-7" id="posNomeGrupo">' +
+            '<div>' +
+            '<label for="inputNomeGrp" class="control-label">Nome do Grupo<span style="color:red">*</span> </label>' +
+            '<div/>' +
+            '<div class="" id="posNomeGrupo">' +
             //'<input type="text" class="form-control" id="inputNomeGrp" name="nomeGrupo" placeholder="Nome do Grupo" required>'+                                 
             '' +
             '</div>' +
             '</div>' +
             '<div class="form-group row" id="divSigla-afiliacao">' +
             //Sigla
-            '<label for="inputSibla" class="col-sm-1 control-label">Sigla<span style="color:red">*</span></label>' +
-            '<div class="col-sm-2" id="posSigla">' +
+            '<div>' +
+            '<label for="inputSigla" class="control-label">Sigla<span style="color:red">*</span></label>' +
+            '</div>' +
+            '<div class="" id="posSigla">' +
             //'<input type="text" class="form-control" id="inputSigla" minlenght="3" name="sigla" placeholder="Sigla" required>'+                                 
             '</div>' +
             //Afiliacao                
+            '<div>' +
             '<label for="inputAfiliacao" class="col-sm-1 control-label">Afiliacao<span style="color:red">*</span></label>' +
-            '<div class="col-sm-4" id="posAfiliacao">' +
+            '</div>' +
+            '<div class="" id="posAfiliacao">' +
             //'<input type="text" class="form-control" name="afiliacao" id="inputAfiliacao" placeholder="Afiliacao" required>'+
             '</div>' +
             '</div>' +
             '<div class="form-group row" id="divEmail-Responsavel">' +
             //Email
-            '<label for="Email" class="col-sm-1 control-label">Email<span style="color:red">*</span></label>' +
-            '<div class="col-sm-4" id="posEmail">' +
+            '<div>' +
+            '<label for="Email" class=" control-label">Email<span style="color:red">*</span></label>' +
+            '</div>' +
+            '<div class="" id="posEmail">' +
             //'<input type="email" class="form-control" data-rule-email="true" name="emailGrupo" id="inputEmail" placeholder="Email do grupo" required>'+              '</div>' +
             '</div>' +
             '<div class="form-group row" id="divSenhas">' +
             //Senha                    
-            '<label for="inputSenha" class="col-sm-1 control-label">Senha<span style="color:red">*</span></label>' +
-            '<div class="col-sm-3" id="posSenha">' +
+            '<div>' +
+            '<label for="inputSenha" class=" control-label">Senha<span style="color:red">*</span></label>' +
+            '</div>' +
+            '<div class="" id="posSenha">' +
             //'<input type="password" class="form-control" name="senha" minlenght="6" id="inputSenha" placeholder="Senha" required>'+
             '</div>' +
             //ConfirmaSenha        
-            '<label for="confirmaSenha" class="col-sm-1 control-label">Confirmar Senha</label>' +
-            '<div class="col-sm-3" id="posConfSenha">' +
+            '<div>' +
+            '<label for="confirmaSenha" class=" control-label">Confirmar Senha</label>' +
+            '</div>' +
+            '<div class="" id="posConfSenha">' +
             //'<input type="password" class="form-control" name="confirmaSenha"  data-rule-equalTo="#inputSenha" minlenght="6" id="confirmaSenha" placeholder="Confirme a Senha" required>'+
-          '</div>' +
+            '</div>' +
             '</div>' +
             '<div class="form-group row" id="divResponsavel-emailContato">' +
             //Responsavel
-            '<label for="inputResponsavel" class="col-sm-1 control-label">Responsavel<span style="color:red">*</span></label>' +
-            '<div class="col-sm-4" id="posResponsavel">' +
+            '<div>' +
+            '<label for="inputResponsavel" class=" control-label">Responsavel<span style="color:red">*</span></label>' +
+            '</div>' +
+            '<div class="" id="posResponsavel">' +
             //'<input type="text" class="form-control" name="responsavel" id="inputResponsavel" placeholder="Nome do Responsavel" required>'+
             '</div>' +
             //emailResponsavel
-
-            '<label for="Email" class="col-sm-2 control-label">Email de contato<span style="color:red">*</span></label>' +
-            '<div class="col-sm-3" id="posEmailResponsavel">' +
+            '<div>' +
+            '<label for="Email" class="control-label">Email de contato<span style="color:red">*</span></label>' +
+            '</div>' +
+            '<div class="" id="posEmailResponsavel">' +
             //'<input type="email" class="form-control" data-rule-email="true" name="emailResponsavel" id="inputEmailResp" placeholder="Email" required>'+                                 
             '</div>' +
             '</div>' +
-            //Contato
+            //Contato    
             '<div class="form-group row" id="divContato">' +
-            '<label for="Contato" class="col-sm-2 control-label">Telefone</label>' +
-            '<div class="col-sm-4" id="posContato">' +
+            '<div>' +
+            '<label for="Contato" class="control-label">Telefone</label>' +
+            '</div>' +
+            '<div class="" id="posContato">' +
             //'<input type="text" class="form-control" name="contato" id="inputContato" placeholder="+55(xx)xxxx-xxxx">'+
             '</div>' +
             '</div>' +
             //Descricao
             '<div class="form-group row" id="divDescricao">' +
-            '<label for="Descricao" class="col-sm-2 control-label">Descricao do grupo<span style="color:red">*</span></label>' +
-            '<div class="col-sm-6" id="posDescricao">' +
+            '<div>' +
+            '<label for="Descricao" class=" control-label">Descricao do grupo<span style="color:red">*</span></label>' +
+            '</div>' +
+            '<div class="" id="posDescricao">' +
             //'<textarea class="form-control" rows="3" name="descricao" id="inputDescricao" required></textarea>'+
             '</div>' +
             '</div>' +
@@ -229,7 +248,7 @@ function naoEncontrado(div) {
     var frm = $('<div class="row"> <div class="col-sm-12"> <form class="form-horizontal" name="formErro" method="post"> ' +
             '<div class="row">' +
             //Cabeçalho
-            '<h2 class="text-center"> Login n&atilde;o realizado! </h2>                       ' +
+            '<h2 > Login n&atilde;o realizado! </h2>                       ' +
             '</div>' +
             '<div class="alert alert-danger" role="alert">' +
             '<strong>Oops!!    </strong>' +
@@ -251,7 +270,7 @@ function createFormNovoExperimental(div) {
             //' <form class="form-horizontal" name="formExperimental" method="post"> '+
             //Cabeçalho                        
             '<div class="row" id="cabecalho">' +
-            '<h2 class="text-center"> Cadastrar novo Grupo Experimental </h2>                       ' +
+            '<h2 > Cadastrar novo Grupo Experimental </h2>                       ' +
             '</div>' +
             //Campos
             '<div class="row" id="fields">' +
@@ -344,7 +363,7 @@ function createFormExibirGrupos(div, usuario) {
             '<div class="row " id="bodyForm">' +
             //Cabeçalho
             '<div class="row" id="cabecalho">' +
-            '<h2 class="text-center"> Grupos Experimentais Cadastrados </h2>  ' +
+            '<h2 > Grupos Experimentais Cadastrados </h2>  ' +
             '</div>' +
             '<div class="panel panel-default">' +
             '<!-- Default panel contents -->' +
@@ -360,7 +379,9 @@ function createFormExibirGrupos(div, usuario) {
             '<center id="posOption"></center>' +
             '</div>' +
             ///Table
-            '<table class="table .table-striped" id="table-content" name="table-content">';
+            '<div style=" overflow-x: scroll;  width: 100%; ">'    +
+            '<table class="table table-striped" id="table-content" name="table-content">';
+            
 
 
     var body = "" +
@@ -369,7 +390,7 @@ function createFormExibirGrupos(div, usuario) {
             //      '  <th> GrupoID </th>' +
             '  <th> C&oacute;digo </th>' +
             '  <th> Descri&ccedil;&atilde;o </th>' +
-            '  <th> Popula&ccedil;&atilde;o </th>' +
+            '  <th class="hide"> Popula&ccedil;&atilde;o </th>' +
             '  <th> Criado em </th>';
 
     var row = '<th id="posGRP">';
@@ -386,6 +407,7 @@ function createFormExibirGrupos(div, usuario) {
 
     var end =
             '</table>' +
+            ' </div>' +
             ' </div>' +
             ' </div>' +
             ' </div>';     //    alert(frm);
@@ -416,7 +438,7 @@ function createFormExibirGrupos(div, usuario) {
     opt1.value = "experimental";
     opt1.checked = true;
     opt2.value = "qpjbr";
-    opt2.value = "ambos";
+    opt3.value = "ambos";
     label1.appendChild(opt1);
     label2.appendChild(opt2);
     label3.appendChild(opt3);
@@ -461,12 +483,19 @@ function criarLinhasTabelaExperimental() {
             //var newTable = document.createElement("table");
             var newTR = document.createElement("tr");
             var newTDid = document.createElement("td");
+            newTDid.className = "TDid";
             var newTDgrupoid = document.createElement("td");
+            newTDgrupoid.className = "TDgroupId";
             var newTDcodgrupo = document.createElement("td");
+            newTDcodgrupo.className = "TDcodGrupo";
             var newTDdescricao = document.createElement("td");
+            newTDdescricao.className = "TDdescicao";
             var newTDpopulacao = document.createElement("td");
+            newTDpopulacao.className = "TDpopulacao";
             var newTDdata = document.createElement("td");
+            newTDdata.className = "TDdata";
             var newTDbtn = document.createElement("td");
+            newTDbtn.className = "TDbtn";
             var span = document.createElement("span");
             span.className = "glyphicon glyphicon-download-alt";
 
@@ -548,31 +577,31 @@ function criarLinhasTabelaExperimental() {
 }
 
 
- function textoInicial(div) {
+function textoInicial(div) {
 
-                            var html = $('<h1>Bem vindo ao Gerenciamento de Grupos de pesquisa</h1>' +
-                                    '<p>N&oacute;s desenvolvemos essa p&aacute;gina para facilitar a obten&ccedil;&atilde;o' +
-                                    ' dos dados dos seus usu&aacute;rios permitindo que voc&ecirc;' +
-                                    'cadastre diversos grupos experimentais e obtenha os resultados separadamente.' +
-                                    '<BR><BR>' +
-                                    '<strong>Como usar o site:</strong><br>' +
-                                    '<br><strong>1º</strong> crie uma conta de acesso fazendo o registro do seu grupo de pesquisa' + '<br>' +
-                                    '&nbsp;&nbsp; * A sigla do seu grupo será utilizada como identificador do seu grupo e o nome de usuário' + '<br>' +                                    
-                                    '<br><strong>2º</strong> Faça seu login utilizando a Sigla e a Senha cadastrada' + '<br>' +
-                                    '<br>&nbsp;&nbsp;&nbsp;&nbsp; <strong> * A função de recuperação de senha não está implementada no momento, qualquer problema com sua senha entre em contato pelo email: fernando.heb@gmail.com  </strong> ' + '<br>' +
-                                    '<br><strong>3º</strong> crie um novo grupo experimental' + '<br>' +                                    
-                                    '&nbsp;&nbsp; * O codigo do grupo experimental é criado automáticamente utilizando a <strong>Sigla</strong> de seu grupo + um número aleatório' +'<br>'+
-                                    '<br><strong>4º</strong> Forneça o link para seus usuários responderem passando como parametro o código do grupo <strong>(codgrp=[codigo do grupo])</strong>' + '<br>' +
-                                    '&nbsp;&nbsp; * Existem atualmente duas versões do questionario uma com 40 questões e uma versão resumida e um mesmo grupo pode ser utilizado em ambas versões' + '<br>' +                                    
-                                    '<br><strong>5º</strong> O Botão [Exibir Grupos Experimentais] apresenta uma lista com todos os grupos cadastrados ' + '<br>' +
-                                    '&nbsp;&nbsp; * Ao lado das informações de cada grupo existe um botão para fazer o download em formato json de todos as respostas obtidas para aquele grupo' +
-                                    '&nbsp;&nbsp;&nbsp; Acima da lista de grupos você pode selecionar se quer o resultado das respostas para um dos questionários específicos ou se deseja fazer o download das respostas independentes da fonte' +
-                                    '<BR><BR>' +
-                                    '</p>');
-                            div.append(html);
+    var html = $('<h1>Bem vindo ao Gerenciamento de Grupos de pesquisa</h1>' +
+            '<p>N&oacute;s desenvolvemos essa p&aacute;gina para facilitar a obten&ccedil;&atilde;o' +
+            ' dos dados dos seus usu&aacute;rios permitindo que voc&ecirc;' +
+            'cadastre diversos grupos experimentais e obtenha os resultados separadamente.' +
+            '<BR><BR>' +
+            '<strong>Como usar o site:</strong><br>' +
+            '<br><strong>1º</strong> crie uma conta de acesso fazendo o registro do seu grupo de pesquisa' + '<br>' +
+            '&nbsp;&nbsp; * A sigla do seu grupo será utilizada como identificador do seu grupo e o nome de usuário' + '<br>' +
+            '<br><strong>2º</strong> Faça seu login utilizando a Sigla e a Senha cadastrada' + '<br>' +
+            '<br>&nbsp;&nbsp;&nbsp;&nbsp; <strong> * A função de recuperação de senha não está implementada no momento, qualquer problema com sua senha entre em contato pelo email: fernando.heb@gmail.com  </strong> ' + '<br>' +
+            '<br><strong>3º</strong> crie um novo grupo experimental' + '<br>' +
+            '&nbsp;&nbsp; * O codigo do grupo experimental é criado automáticamente utilizando a <strong>Sigla</strong> de seu grupo + um número aleatório' + '<br>' +
+            '<br><strong>4º</strong> Forneça o link para seus usuários responderem passando como parametro o código do grupo <strong>(codgrp=[codigo do grupo])</strong>' + '<br>' +
+            '&nbsp;&nbsp; * Existem atualmente duas versões do questionario uma com 40 questões e uma versão resumida e um mesmo grupo pode ser utilizado em ambas versões' + '<br>' +
+            '<br><strong>5º</strong> O Botão [Exibir Grupos Experimentais] apresenta uma lista com todos os grupos cadastrados ' + '<br>' +
+            '&nbsp;&nbsp; * Ao lado das informações de cada grupo existe um botão para fazer o download em formato json de todos as respostas obtidas para aquele grupo' +
+            '&nbsp;&nbsp;&nbsp; Acima da lista de grupos você pode selecionar se quer o resultado das respostas para um dos questionários específicos ou se deseja fazer o download das respostas independentes da fonte' +
+            '<BR><BR>' +
+            '</p>');
+    div.append(html);
 
 
-                        }
+}
 
 
 

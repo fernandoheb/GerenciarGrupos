@@ -66,17 +66,20 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
     <nav class="navbar navbar-inverse ">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <div class="col-xs-3 "><ul class="nav navbar-nav atention">
+                    
+                    <li class="active home"><a href="#" ><strong>Home</strong></a></li></ul></div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">                    
+                    <span class="sr-only">Navegação</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>                        
                 </button>
-                <a class="navbar-brand " href="#"></a>
+               
             </div>
             <div class="collapse navbar-collapse " id="myNavbar">
                 <ul class="nav navbar-nav atention">
                     <!-- itens do menu -->
-                    <li class="active home"><a href="#" ><strong>Home</strong></a></li>
                     <li><a class="atention"href="#" id="novoRegistro2" onclick="register();"><strong> Registrar Grupo</strong></a></li>
                     <!--
                     
@@ -140,19 +143,23 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
         </div>
     </div>
     <!--corpo da pagina-->
-    <div class="container-fluid text-center">  
+    <div class="container-fluid ">  
         <div class="row content">
             <!-- Menu Lateral esquerdo-->
             <div class="col-sm-3 col-md-2 col-lg-2 sidenav"> 
-                <div class="well">                
-                    <button type="button" class="btn btn-primary btn-sm" name="exibirGrupos" id="exibirGrupos">Exibir Grupos <br> Experimentais</button>
+                <div class="well">
+                    <center>              
+                    <button type="button" class="btn btn-primary " name="exibirGrupos" id="exibirGrupos">Exibir Grupos <br> Experimentais</button>
+                    </center>
                 </div>
                 <div class="well">       
-                    <button type="button" class="btn btn-primary btn-sm" name="novoExperimental" id="novoExperimental">Inserir Grupo <br> Experimental</button>
+                    <center>
+                    <button type="button" class="btn btn-primary" name="novoExperimental" id="novoExperimental">Inserir Grupo <br> Experimental</button>
+                    </center>
                 </div>
             </div>
             <!-- Centro -->
-            <div class=" col-sm-9 col-md-10 col-lg-10 text-left  text-left " name="mainDiv" id="mainDiv"> 
+            <div class=" col-sm-9 col-md-10 col-lg-10 div-body" name="mainDiv" id="mainDiv"> 
                 <form method="post" id="MainForm">
                 </form>
                 <!--Body--> 
@@ -231,7 +238,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                             }
                         });
 
-                        /*
+                        /*  
                          $("#btnLogin").click( function(e){
                          if($("#formLogin").valid()) {
                          Login();
@@ -413,6 +420,7 @@ setlocale(LC_ALL, 'pt_BR.UTF8');
                             ajax(acao, null, 'json', 'POST', resultadoSelect = function (res) {
                                 if (res) {
                                     var url = 'data:text/json;charset=utf8,' + JSON.stringify(res);
+                                     //<a href="#" class="btn btn-info" role="button">Link Button</a>
                                     window.open(url, '_blank');
                                     window.focus();
                                 } else {
